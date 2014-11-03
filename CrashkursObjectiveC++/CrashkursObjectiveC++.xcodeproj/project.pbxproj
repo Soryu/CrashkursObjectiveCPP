@@ -21,6 +21,8 @@
 		01C80D8F17CBD46200A30DC7 /* COCCacheDemoObjCPP.mm in Sources */ = {isa = PBXBuildFile; fileRef = 01C80D8917CBD46200A30DC7 /* COCCacheDemoObjCPP.mm */; };
 		01C80D9017CBD46200A30DC7 /* COCCacheDemoObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C80D8C17CBD46200A30DC7 /* COCCacheDemoObjC.m */; };
 		01C80D9117CBD46200A30DC7 /* COCCacheKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C80D8E17CBD46200A30DC7 /* COCCacheKey.m */; };
+		DA5C8F7B1A0803830063EA46 /* SensorReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C8F7A1A0803830063EA46 /* SensorReading.swift */; };
+		DA5C8F7D1A0804120063EA46 /* SensorDemoSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C8F7C1A0804120063EA46 /* SensorDemoSwift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,9 @@
 		01C80D8C17CBD46200A30DC7 /* COCCacheDemoObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COCCacheDemoObjC.m; sourceTree = "<group>"; };
 		01C80D8D17CBD46200A30DC7 /* COCCacheKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COCCacheKey.h; sourceTree = "<group>"; };
 		01C80D8E17CBD46200A30DC7 /* COCCacheKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COCCacheKey.m; sourceTree = "<group>"; };
+		DA5C8F791A0803830063EA46 /* CrashkursObjectiveC++-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CrashkursObjectiveC++-Bridging-Header.h"; sourceTree = "<group>"; };
+		DA5C8F7A1A0803830063EA46 /* SensorReading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorReading.swift; sourceTree = "<group>"; };
+		DA5C8F7C1A0804120063EA46 /* SensorDemoSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDemoSwift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +145,7 @@
 				01C80D6D17CBB3D500A30DC7 /* Objective-C */,
 				01C80D7217CBB3D500A30DC7 /* Plain C */,
 				01C80D6817CBB3D500A30DC7 /* C++ */,
+				DA5C8F781A0803330063EA46 /* Swift */,
 			);
 			path = Sensor;
 			sourceTree = "<group>";
@@ -202,6 +208,16 @@
 				01C80D8E17CBD46200A30DC7 /* COCCacheKey.m */,
 			);
 			path = "Objective-C";
+			sourceTree = "<group>";
+		};
+		DA5C8F781A0803330063EA46 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				DA5C8F7A1A0803830063EA46 /* SensorReading.swift */,
+				DA5C8F7C1A0804120063EA46 /* SensorDemoSwift.swift */,
+				DA5C8F791A0803830063EA46 /* CrashkursObjectiveC++-Bridging-Header.h */,
+			);
+			path = Swift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +294,8 @@
 				01B79DC517C7AD5800A986FC /* main.m in Sources */,
 				01C80D7D17CBB4E000A30DC7 /* COCacheDemo.m in Sources */,
 				01C80D7717CBB3D500A30DC7 /* COCSensorDemoObjC.m in Sources */,
+				DA5C8F7D1A0804120063EA46 /* SensorDemoSwift.swift in Sources */,
+				DA5C8F7B1A0803830063EA46 /* SensorReading.swift in Sources */,
 				01C80D9117CBD46200A30DC7 /* COCCacheKey.m in Sources */,
 				01C80D7617CBB3D500A30DC7 /* COCSensorDemo.m in Sources */,
 			);
@@ -371,12 +389,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrashkursObjectiveC++/CrashkursObjectiveC++-Prefix.pch";
 				INFOPLIST_FILE = "CrashkursObjectiveC++/CrashkursObjectiveC++-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CrashkursObjectiveC++/Sensor/Swift/CrashkursObjectiveC++-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -385,12 +407,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrashkursObjectiveC++/CrashkursObjectiveC++-Prefix.pch";
 				INFOPLIST_FILE = "CrashkursObjectiveC++/CrashkursObjectiveC++-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CrashkursObjectiveC++/Sensor/Swift/CrashkursObjectiveC++-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
