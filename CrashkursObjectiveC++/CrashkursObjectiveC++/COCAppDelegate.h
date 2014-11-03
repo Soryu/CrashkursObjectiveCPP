@@ -11,6 +11,7 @@
 @class COCSensorDemoPlainC;
 @class COCCacheDemoObjC;
 @class COCCacheDemoObjCPP;
+@class SensorDemoSwift;
 
 @interface COCAppDelegate : NSObject <NSApplicationDelegate>
 
@@ -19,10 +20,12 @@
 @property (nonatomic, readwrite, strong) COCSensorDemoObjC*     sensorDemoObjC;
 @property (nonatomic, readwrite, strong) COCSensorDemoObjCPP*   sensorDemoObjCPP;
 @property (nonatomic, readwrite, strong) COCSensorDemoPlainC*   sensorDemoPlainC;
+@property (nonatomic, readwrite, strong) SensorDemoSwift*       sensorDemoSwift;
 
 - (IBAction)runSensorDemoObjC:(id)sender;
 - (IBAction)runSensorDemoObjCpp:(id)sender;
 - (IBAction)runSensorDemoPlainC:(id)sender;
+- (IBAction)runSensorDemoSwift:(id)sender;
 
 @property (nonatomic, readwrite, strong) COCCacheDemoObjC*      cacheDemoObjC;
 @property (nonatomic, readwrite, strong) COCCacheDemoObjCPP*    cacheDemoObjCPP;

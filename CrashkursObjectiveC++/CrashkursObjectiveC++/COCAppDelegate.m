@@ -12,6 +12,8 @@
 #import "COCSensorDemoPlainC.h"
 #import "COCCacheDemoObjC.h"
 #import "COCCacheDemoObjCPP.h"
+#import "CrashkursObjectiveC__-Swift.h"
+
 
 typedef struct
 {
@@ -28,6 +30,7 @@ typedef struct
     self.sensorDemoPlainC = [[COCSensorDemoPlainC alloc] init];
     self.cacheDemoObjC    = [[COCCacheDemoObjC    alloc] init];
     self.cacheDemoObjCPP  = [[COCCacheDemoObjCPP  alloc] init];
+    self.sensorDemoSwift  = [[SensorDemoSwift     alloc] init];
 }
 
 - (IBAction)runSensorDemoObjC:(id)sender
@@ -43,6 +46,11 @@ typedef struct
 - (IBAction)runSensorDemoPlainC:(id)sender
 {
     [self.sensorDemoPlainC run];
+}
+
+- (IBAction)runSensorDemoSwift:(id)sender
+{
+    [self.sensorDemoSwift run];
 }
 
 - (IBAction)runCacheDemoObjC:(id)sender;
