@@ -13,6 +13,7 @@
 // Configuration
 @property (nonatomic, readonly)     NSUInteger              batchSize;
 @property (nonatomic, readonly)     NSUInteger              numberOfBatches;
+@property (nonatomic, readonly)     NSUInteger              numberOfLookups;
 @property (nonatomic, readonly)     NSTimeInterval          defaultTime;
 
 + (void)provideRandomValues:(NSInteger)countAndDirection
