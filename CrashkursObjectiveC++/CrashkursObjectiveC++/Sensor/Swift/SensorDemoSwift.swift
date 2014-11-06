@@ -91,6 +91,10 @@ import Foundation
       newValues.append(SensorReading(time: time, value: value, sensorId: sensorId))
     }
     
+    // from instruments: specialization <Swift.LazyBidirectionalCollection<Swift.RandomAccessReverseView<[CrashkursObjectiveC__.SensorReading]>> with Swift.LazyBidirectionalCollection<Swift.RandomAccessReverseView<[CrashkursObjectiveC__.SensorReading]>> : Swift.CollectionType, Swift.IndexingGenerator<Swift.RandomAccessReverseView<[CrashkursObjectiveC__.SensorReading]>> with Swift.IndexingGenerator<Swift.RandomAccessReverseView<[CrashkursObjectiveC__.SensorReading]>> : Swift.GeneratorType, CrashkursObjectiveC__.SensorReading, Swift.ReverseRandomAccessIndex<Swift.Int> with Swift.ReverseRandomAccessIndex<Swift.Int> : Swift.ForwardIndexType, Swift.Int with Swift.Int : Swift._SignedIntegerType, Swift.Int with Swift.Int : Swift._BuiltinIntegerLiteralConvertible, Swift._DisabledRangeIndex_> of Swift.~> infix <A : Swift.CollectionType>(A, (Swift._CopyToNativeArrayBuffer, ())) -> Swift._ContiguousArrayBuffer<A._Element>
+
+    // interesting, but not sure we can do anything with that?
+
     var newOrderedValues = newValues.reverse()
     newOrderedValues.extend(self.readings)
     
