@@ -9,9 +9,9 @@
 import Foundation
 
 struct SensorReading {
-  var time: NSTimeInterval
-  var value: Double
-  var sensorId: NSUUID
+  let time: NSTimeInterval
+  let value: Double
+  let sensorId: NSUUID
   
   func interpolatedValueAtTime(interpolationTime :NSTimeInterval, betweenReceiverAndReading nextReading: SensorReading) -> Double {
     
