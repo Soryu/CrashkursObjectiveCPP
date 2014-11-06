@@ -45,8 +45,8 @@ import Foundation
     
     let count = self.numberOfLookups
     for (var index:UInt = 0; index < count; ++index) {
-      let randomOffset = arc4random() % duration
-      let sampleTime = earliest + Double(randomOffset)
+      let randomOffset = Double(arc4random() % duration)
+      let sampleTime = earliest + randomOffset
       self.interpolatedValueAtTime(sampleTime)
     }
   }
@@ -149,16 +149,16 @@ import Foundation
     let sensorID = NSUUID()
 
     for _ in 1 ..< count {
-      let timeDelta = arc4random() % 3600
+      let timeDelta = Double(arc4random() % 3600)
 
       if backwards {
-        time -= Double(timeDelta)
+        time -= timeDelta
       } else {
-        time += Double(timeDelta)
+        time += timeDelta
       }
 
-      let value = arc4random() % 100
-      storage(iTime: time, iValue: Double(value), iSensorId: sensorID)
+      let value = Double(arc4random() % 100)
+      storage(iTime: time, iValue: value, iSensorId: sensorID)
     }
   }
   
