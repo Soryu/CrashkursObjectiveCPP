@@ -76,7 +76,7 @@ import Foundation
   }
   
   override func appendBatchOfSensorReadings() {
-    SensorDemoSwift.provideRandomValues(Int(self.batchSize), startTime: self.latestTime()) {
+    SensorDemoSwift.provideRandomValuesSwift(Int(self.batchSize), startTime: self.latestTime()) {
       time, value, sensorId in
       
       self.readings.append(SensorReading(time: time, value: value, sensorId: sensorId))
@@ -84,9 +84,8 @@ import Foundation
   }
   
   override func prependBatchOfSensorReadings() {
-    
     var newValues = Array<SensorReading>()
-    SensorDemoSwift.provideRandomValues(-Int(self.batchSize), startTime: self.earliestTime()) {
+    SensorDemoSwift.provideRandomValuesSwift(-Int(self.batchSize), startTime: self.earliestTime()) {
       time, value, sensorId in
       
       newValues.append(SensorReading(time: time, value: value, sensorId: sensorId))
@@ -139,28 +138,28 @@ import Foundation
     }
   }
   
-  //  class func provideRandomValues(countAndDirection: Int, startTime: NSTimeInterval, usingStorage storage:(iTime: NSTimeInterval, iValue: Double, iSensorId: NSUUID) -> Void) {
-  //
-  //    // assert(storage != nil)
-  //
-  //    var time = startTime;
-  //    let count = abs(countAndDirection)
-  //    let backwards = countAndDirection < 0
-  //
-  //    let sensorID = NSUUID()
-  //
-  //    for _ in 1 ..< count {
-  //      let timeDelta = arc4random() % 3600
-  //
-  //      if backwards {
-  //        time -= Double(timeDelta)
-  //      } else {
-  //        time += Double(timeDelta)
-  //      }
-  //
-  //      let value = arc4random() % 100
-  //      storage(iTime: time, iValue: Double(value), iSensorId: sensorID)
-  //    }
-  //  }
+  class func provideRandomValuesSwift(countAndDirection: Int, startTime: NSTimeInterval, usingStorage storage:(iTime: NSTimeInterval, iValue: Double, iSensorId: NSUUID) -> Void) {
+
+    // assert(storage != nil)
+
+    var time = startTime;
+    let count = abs(countAndDirection)
+    let backwards = countAndDirection < 0
+
+    let sensorID = NSUUID()
+
+    for _ in 1 ..< count {
+      let timeDelta = arc4random() % 3600
+
+      if backwards {
+        time -= Double(timeDelta)
+      } else {
+        time += Double(timeDelta)
+      }
+
+      let value = arc4random() % 100
+      storage(iTime: time, iValue: Double(value), iSensorId: sensorID)
+    }
+  }
   
 }
