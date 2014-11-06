@@ -41,11 +41,11 @@ import Foundation
   func lookupValues() {
     let earliest = self.earliestTime()
     let latest   = self.latestTime()
-    let duration = latest - earliest
+    let duration = UInt32(latest - earliest)
     
     let count = self.numberOfLookups
     for (var index:UInt = 0; index < count; ++index) {
-      let randomOffset = arc4random() % UInt32(duration)
+      let randomOffset = arc4random() % duration
       let sampleTime = earliest + Double(randomOffset)
       self.interpolatedValueAtTime(sampleTime)
     }
