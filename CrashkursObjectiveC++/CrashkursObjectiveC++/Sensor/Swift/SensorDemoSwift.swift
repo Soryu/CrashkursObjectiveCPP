@@ -140,8 +140,6 @@ import Foundation
   
   class func provideRandomValuesSwift(countAndDirection: Int, startTime: NSTimeInterval, usingStorage storage:(iTime: NSTimeInterval, iValue: Double, iSensorId: NSUUID) -> Void) {
 
-    // assert(storage != nil)
-
     var time = startTime;
     let count = abs(countAndDirection)
     let backwards = countAndDirection < 0
